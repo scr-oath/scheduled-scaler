@@ -18,6 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+//go:generate mockgen -source=$GOFILE -destination=mock_$GOPACKAGE/$GOFILE -package mock_$GOPACKAGE
+
 import (
 	internalinterfaces "k8s.restdev.com/operators/pkg/client/informers/externalversions/internalinterfaces"
 )

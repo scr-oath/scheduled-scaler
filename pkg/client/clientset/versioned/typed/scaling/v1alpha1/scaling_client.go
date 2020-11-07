@@ -23,11 +23,6 @@ import (
 	"k8s.restdev.com/operators/pkg/client/clientset/versioned/scheme"
 )
 
-type ScalingV1alpha1Interface interface {
-	RESTClient() rest.Interface
-	ScheduledScalersGetter
-}
-
 // ScalingV1alpha1Client is used to interact with features provided by the scaling.k8s.restdev.com group.
 type ScalingV1alpha1Client struct {
 	restClient rest.Interface

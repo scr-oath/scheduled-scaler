@@ -18,6 +18,8 @@ limitations under the License.
 
 package v1alpha1
 
+//go:generate mockgen -source=$GOFILE -destination=mock_$GOPACKAGE/$GOFILE -package mock_$GOPACKAGE
+
 import (
 	"k8s.io/apimachinery/pkg/api/errors"
 	"k8s.io/apimachinery/pkg/labels"
@@ -31,7 +33,6 @@ type ScheduledScalerLister interface {
 	List(selector labels.Selector) (ret []*v1alpha1.ScheduledScaler, err error)
 	// ScheduledScalers returns an object that can list and get ScheduledScalers.
 	ScheduledScalers(namespace string) ScheduledScalerNamespaceLister
-	ScheduledScalerListerExpansion
 }
 
 // scheduledScalerLister implements the ScheduledScalerLister interface.
@@ -63,7 +64,6 @@ type ScheduledScalerNamespaceLister interface {
 	List(selector labels.Selector) (ret []*v1alpha1.ScheduledScaler, err error)
 	// Get retrieves the ScheduledScaler from the indexer for a given namespace and name.
 	Get(name string) (*v1alpha1.ScheduledScaler, error)
-	ScheduledScalerNamespaceListerExpansion
 }
 
 // scheduledScalerNamespaceLister implements the ScheduledScalerNamespaceLister

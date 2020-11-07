@@ -16,6 +16,8 @@ limitations under the License.
 
 package v1alpha1
 
+//go:generate mockgen -source=$GOFILE -destination=mock_$GOPACKAGE/$GOFILE -package mock_$GOPACKAGE
+
 import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	types "k8s.io/apimachinery/pkg/types"
@@ -31,6 +33,11 @@ type ScheduledScalersGetter interface {
 	ScheduledScalers(namespace string) ScheduledScalerInterface
 }
 
+type ScalingV1alpha1Interface interface {
+	RESTClient() rest.Interface
+	ScheduledScalersGetter
+}
+
 // ScheduledScalerInterface has methods to work with ScheduledScaler resources.
 type ScheduledScalerInterface interface {
 	Create(*v1alpha1.ScheduledScaler) (*v1alpha1.ScheduledScaler, error)
@@ -41,7 +48,6 @@ type ScheduledScalerInterface interface {
 	List(opts v1.ListOptions) (*v1alpha1.ScheduledScalerList, error)
 	Watch(opts v1.ListOptions) (watch.Interface, error)
 	Patch(name string, pt types.PatchType, data []byte, subresources ...string) (result *v1alpha1.ScheduledScaler, err error)
-	ScheduledScalerExpansion
 }
 
 // scheduledScalers implements ScheduledScalerInterface

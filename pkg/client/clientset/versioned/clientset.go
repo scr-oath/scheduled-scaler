@@ -16,6 +16,8 @@ limitations under the License.
 
 package versioned
 
+//go:generate mockgen -source=$GOFILE -destination=mock_$GOPACKAGE/$GOFILE -package mock_$GOPACKAGE
+
 import (
 	glog "github.com/golang/glog"
 	discovery "k8s.io/client-go/discovery"

@@ -15,6 +15,7 @@ require (
 	github.com/go-openapi/swag v0.0.0-20170606142751-f3f9494671f9
 	github.com/gogo/protobuf v0.0.0-20170330071051-c0656edd0d9e
 	github.com/golang/glog v0.0.0-20141105023935-44145f04b68c
+	github.com/golang/mock v1.4.3
 	github.com/golang/protobuf v0.0.0-20171021043952-1643683e1b54
 	github.com/google/btree v0.0.0-20160524151835-7d79101e329e
 	github.com/google/gofuzz v0.0.0-20161122191042-44d81051d367
@@ -29,11 +30,11 @@ require (
 	github.com/peterbourgon/diskv v2.0.1+incompatible
 	github.com/robfig/cron v1.0.1-0.20171101201047-2315d5715e36
 	github.com/spf13/pflag v0.0.0-20170130214245-9ff6c6923cff
-	golang.org/x/crypto v0.0.0-20170825220121-81e90905daef
-	golang.org/x/net v0.0.0-20170809000501-1c05540f6879
+	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+	golang.org/x/net v0.0.0-20190311183353-d8887717615a
 	golang.org/x/oauth2 v0.0.0-20170412232759-a6bd8cefa181
-	golang.org/x/sys v0.0.0-20171031081856-95c657629925
-	golang.org/x/text v0.0.0-20170810154203-b19bf474d317
+	golang.org/x/sys v0.0.0-20190215142949-d0b11bdaac8a
+	golang.org/x/text v0.3.0
 	google.golang.org/api v0.0.0-20180215000618-3acc4f94acb5
 	gopkg.in/inf.v0 v0.9.0
 	gopkg.in/yaml.v2 v2.0.0-20150924142314-53feefa2559f

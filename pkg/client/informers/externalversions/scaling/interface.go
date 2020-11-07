@@ -18,6 +18,8 @@ limitations under the License.
 
 package scaling
 
+//go:generate mockgen -source=$GOFILE -destination=mock_$GOPACKAGE/$GOFILE -package mock_$GOPACKAGE
+
 import (
 	internalinterfaces "k8s.restdev.com/operators/pkg/client/informers/externalversions/internalinterfaces"
 	v1alpha1 "k8s.restdev.com/operators/pkg/client/informers/externalversions/scaling/v1alpha1"

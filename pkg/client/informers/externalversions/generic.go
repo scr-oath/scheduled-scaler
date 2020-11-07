@@ -18,6 +18,8 @@ limitations under the License.
 
 package externalversions
 
+//go:generate mockgen -source=$GOFILE -destination=mock_$GOPACKAGE/$GOFILE -package mock_$GOPACKAGE
+
 import (
 	"fmt"
 
